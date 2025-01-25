@@ -40,7 +40,6 @@ android {
 }
 
 dependencies {
-    implementation(libs.androidx.navigation.compose.v275)
     implementation(libs.logging.interceptor)
     implementation(libs.retrofit)
     implementation(libs.converter.gson)

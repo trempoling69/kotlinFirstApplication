@@ -6,11 +6,11 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitInstance {
-    private const val BASE_URL = ""
+    private const val BASE_URL = "https://jsonplaceholder.typicode.com"
 
     fun getInstance(): Retrofit{
         val client = OkHttpClient()
-        val interceptor = HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor)
+        val interceptor = HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
         val clientBuilder: OkHttpClient.Builder = client.newBuilder().addInterceptor(interceptor)
 
         return Retrofit.Builder().baseUrl(BASE_URL).addConverterFactory(GsonConverterFactory.create()).build()
